@@ -17,22 +17,23 @@ class Player:
     def flip_sprite(self):
         pg.transform.flip(self.imposter_sprite, True, False)
 
-    def move(self, event):
-        if event.key == pg.K_w:
-            self.y_imposter -= 45
-        if event.key == pg.K_s:
-            self.y_imposter += 45
+    def move(self):
+        keys = pg.key.get_pressed()
+        if keys[pg.K_w]:
+            self.y_imposter -= 1
+        if keys[pg.K_s]:
+            self.y_imposter += 1
 
-        if event.key == pg.K_a:
-            self.x_imposter -= 45
+        if keys[pg.K_a]:
+            self.x_imposter -= 1
             if self.flip:
                 pass
             else:
                 # pg.transform.flip(self.imposter_sprite, True, False)
                 self.flip = True
 
-        if event.key == pg.K_d:
-            self.x_imposter += 45
+        if keys[pg.K_d]:
+            self.x_imposter += 1
             if self.flip:
                 # pg.transform.flip(self.imposter_sprite, True, False)
                 self.flip = False
