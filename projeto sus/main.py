@@ -15,6 +15,7 @@ player = Player()
 roxo_sprite = pg.image.load(f'{diretorio}\\images\\roxo.png')
 roxo_body_sprite = pg.image.load(f'{diretorio}\\images\\body_roxo.png')
 icon = pg.image.load(f'{diretorio}\\images\\icone.png')
+bg_game_over = pg.image.load(f'{diretorio}\\images\\gameover.png')
 
 resolution = [1280, 720]
 window = pg.display.set_mode((resolution[0], resolution[1]))
@@ -23,20 +24,27 @@ font = pg.font.SysFont('arial.ttf', 50)
 x_roxo = randint(10, resolution[0] - 60)
 y_roxo = randint(10, resolution[1] - 60)
 
-pg.display.set_caption('SUS')
+pg.display.set_caption('SUPER SUS IMPOSTOR AMONG US KILLER SIMULATOR 3D MOBILE FREE SHOOTER.IO')
 pg.display.set_icon(icon)
 
 death_sound = pg.mixer.Sound(f'{diretorio}\\sounds\\death.wav')
 
 points = 0
-
+seconds = 10
+time_color = (255, 255, 255)
 
 while True:
     timer = (pg.time.get_ticks()) / 1000
     window.fill(fundo)
-
     text_points = font.render(f'Points: {points}', True, (255, 255, 255), fundo)
-    text_timer = font.render(f'Timer: {10 - timer:.0f}', True, (255, 255, 255), fundo)
+
+    if seconds - int(timer) < 5:
+        time_color = (255, 6, 0)
+    else:
+        time_color = (255, 255, 255)
+
+    text_timer = font.render(f'Timer: {seconds - timer:.0f}', True, time_color, fundo)
+
     window.blit(text_points, (1000, 50))
     window.blit(text_timer, (1000, 100))
 
@@ -56,9 +64,16 @@ while True:
 
         pg.mixer.Sound.play(death_sound)
         points += 1
+        seconds += 3
+    if timer > seconds:
+        break
 
-    if timer > 1000:
-        pg.quit()
-        exit()
+    pg.display.flip()
+
+while True:
+    window.blit(bg_game_over, (0, 0))
+
+    text_game_over = font.render('YOU are the imposter', True, (255, 255, 255), fundo)
+    window.blit(text_game_over, (480, 240))
 
     pg.display.flip()
