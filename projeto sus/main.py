@@ -23,7 +23,7 @@ font = pg.font.SysFont('arial.ttf', 50)
 x_roxo = randint(10, resolution[0] - 60)
 y_roxo = randint(10, resolution[1] - 60)
 
-pg.display.set_caption('SUS')
+pg.display.set_caption('THE FINAL SUS AMONGUS CRAFT NITE THE DEFINETIVE EDITON PRO MAX 11')
 pg.display.set_icon(icon)
 
 death_sound = pg.mixer.Sound(f'{diretorio}\\sounds\\death.wav')
@@ -57,8 +57,7 @@ while True:
         pg.mixer.Sound.play(death_sound)
         points += 1
 
-    if timer > 1000:
-        pg.quit()
-        exit()
-
+    # if timer > 1000:
+        # pg.quit()
+        # exit()
     pg.display.flip()
