@@ -17,6 +17,7 @@ background_image = pygame.transform.scale(background_image, (screen_width, scree
 # Definir as vidas iniciais dos personagens
 player1_life = 100
 player2_life = 100
+max_life = 100
 
 # Definir a fonte para mostrar as vidas
 life_font = pygame.font.Font(None, 30)
@@ -124,7 +125,7 @@ while running:
     player2_life_text = life_font.render("Player 2: " + str(player2_life), True, (255, 255, 255))
     screen.blit(player1_life_text, (50, 50))
     screen.blit(player2_life_text, (screen_width - 150, 50))
-    pygame.draw.rect(screen, health_color, (health_rect.x, health_rect.y, health_rect.width, health_rect.height))
+    pygame.draw.rect(screen, health_color, (health_rect.x, health_rect.y, player1_life/max_life * health_rect.width, health_rect.height))
 
     if pressed_keys[pygame.K_l]:
         player1_life -= 10
