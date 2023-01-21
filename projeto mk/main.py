@@ -2,6 +2,7 @@ import pygame
 from os import getcwd
 from scorpion import scorpion
 from sub_zero import sub_zero
+from dev_tools import dev
 
 # Inicializar o pygame
 pygame.init()
@@ -38,6 +39,8 @@ health_rect_2 = pygame.Rect(550, 25, 440, 20)
 
 scorpion = scorpion(screen_height=screen_height)
 sub_zero = sub_zero(screen_height=screen_height, screen_width=screen_width)
+dev_tools = False
+dev = dev()
 while running:
     clock.tick(60)
     screen.blit(background_image, (0, 0))
@@ -60,8 +63,6 @@ while running:
     )
 
     # Desenhar as vidas dos personagens na tela
-    player2_life_text = life_font.render(f"Player 1: {str(player1_life)} Player 2: {str(player2_life)}", True, (255, 255, 255))
-    screen.blit(player2_life_text, (10, 50))
     pygame.draw.rect(screen, demage_color, (health_rect.x, health_rect.y, health_rect.width, health_rect.height))
     pygame.draw.rect(screen, health_color,
                      (health_rect.x, health_rect.y, player1_life / max_life * health_rect.width, health_rect.height))
@@ -74,6 +75,17 @@ while running:
         player1_life -= 10
     elif pressed_keys[pygame.K_p]:
         player2_life -= 10
+
+    if pressed_keys[pygame.K_1]:
+        dev_tools = True
+
+    if dev_tools:
+        dev.init(
+            screen=screen,
+            life_font=life_font,
+            player1_life=player1_life,
+            player2_life=player2_life
+        )
 
     # Verificar se algum personagem more
     if player1_life <= 0 or player2_life <= 0:
