@@ -40,15 +40,15 @@ class scorpion:
                 self.animation_index = 0
             screen.blit(animation_reverse[int(self.animation_index)], (self.scorpion_x, self.scorpion_y))
 
-    def events(self, screen, animation_normal, animation_normal_reverse, animation_walking, animation_walking_reverse):
+    def events(self, screen):
         pressed_keys = pygame.key.get_pressed()
         if pressed_keys[pygame.K_a]:
             self.scorpion_x -= 5
             self.scorpion_state = False
             self.update(
                 screen=screen,
-                animation=animation_walking,
-                animation_reverse=animation_walking_reverse
+                animation=self.scorpion_walking,
+                animation_reverse=self.scorpion_walking_inv
             )
 
         elif pressed_keys[pygame.K_d]:
@@ -56,14 +56,14 @@ class scorpion:
             self.scorpion_state = True
             self.update(
                 screen=screen,
-                animation=animation_walking,
-                animation_reverse=animation_walking_reverse
+                animation=self.scorpion_walking,
+                animation_reverse=self.scorpion_walking_inv
             )
         else:
             self.update(
                 screen=screen,
-                animation=animation_normal,
-                animation_reverse=animation_normal_reverse
+                animation=self.scorpion_normal,
+                animation_reverse=self.scorpion_normal_inv
             )
 
 
