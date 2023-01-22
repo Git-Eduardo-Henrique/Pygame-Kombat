@@ -1,79 +1,66 @@
 import pygame
 from os import getcwd
 
-from menu import menu
-from scorpion import scorpion
+from scorpion import Scorpion
 from sub_zero import sub_zero
 from fight_hud import FightHud
 
-# Inicializar o pygame
-pygame.init()
-diretorio = getcwd()
 
-# Definir as dimensões da tela
-screen_width = 1000
-screen_height = 400
-screen = pygame.display.set_mode((screen_width, screen_height))
+class Fight:
+    def __init__(self, screen, screen_width, screen_height):
+        self.screen = screen
+        self.screen_width = screen_width
+        self.screen_height = screen_height
 
-background_image = pygame.image.load(f"{diretorio}\\images\\stage.png")
-background_image = pygame.transform.scale(background_image, (screen_width, screen_height))
+        self.diretorio = getcwd()
 
-# Definir a fonte para mostrar as vidas
-final_font = pygame.font.Font(None, 100)
+        self.background_image = pygame.image.load(f"{self.diretorio}\\images\\stage.png")
+        self.background_image = pygame.transform.scale(self.background_image, (screen_width, screen_height))
 
-# Loop principal do jogo
-clock = pygame.time.Clock()
-# vidas
-max_life = 1000
-player1_life = max_life
-player2_life = max_life
+        # Definir a fonte para mostrar as vidas
+        self.final_font = pygame.font.Font(None, 50)
 
-scorpion = scorpion(
-    screen_height=screen_height)
+        # vidas
+        self.max_life = 1000
+        self.player1_life = self.max_life
+        self.player2_life = self.max_life
 
-sub_zero = sub_zero(
-    screen_height=screen_height,
-    screen_width=screen_width)
+        self.scorpion = Scorpion(screen_height=screen_height)
 
-menu = menu()
+        self.sub_zero = sub_zero(
+            screen_height=screen_height,
+            screen_width=screen_width
+        )
 
-FightHud = FightHud(
-    screen=screen
-)
-running = True
-while running:
-    clock.tick(60)
-    screen.blit(background_image, (0, 0))
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            running = False
+        self.FightHud = FightHud(
+             screen=screen
+        )
 
-    FightHud.in_fight(
-        player1_life=player1_life,
-        player2_life=player2_life,
-        max_life=max_life
-    )
+    def fight_start(self):
+        self.screen.blit(self.background_image, (0, 0))
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                exit()
 
-    sub_zero.update(screen=screen)
-    sub_zero.move()
+        self.FightHud.in_fight(
+                player1_life=self.player1_life,
+                player2_life=self.player2_life,
+                max_life=self.max_life
+        )
 
-    scorpion.events(
-        screen=screen
-    )
+        self.sub_zero.update(screen=self.screen)
+        self.sub_zero.move()
 
-    pressed_keys = pygame.key.get_pressed()
-    if pressed_keys[pygame.K_l]:
-        player1_life -= 10
-    elif pressed_keys[pygame.K_p]:
-        player2_life -= 10
+        self.scorpion.events(screen=self.screen)
 
-    if player1_life <= 0 or player2_life <= 0:
-        game_over_text = final_font.render("finish him", True, (255, 255, 255))
-        screen.blit(game_over_text, (
-            screen_width / 2 - game_over_text.get_width() / 2, screen_height / 2 - game_over_text.get_height() / 2))
+        pressed_keys = pygame.key.get_pressed()
+        if pressed_keys[pygame.K_l]:
+            self.player1_life -= 10
+        elif pressed_keys[pygame.K_p]:
+            self.player2_life -= 10
 
-    # Atualizar a tela
-    pygame.display.flip()
-
-# Finalizar o pygame
-pygame.quit()
+        if self.player1_life <= 0 or self.player2_life <= 0:
+            game_over_text = self.final_font.render("finish him", True, (255, 255, 255))
+            self.screen.blit(game_over_text, (
+                self.screen_width / 2 - game_over_text.get_width() / 2, 100))

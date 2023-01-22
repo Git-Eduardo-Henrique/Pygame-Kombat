@@ -2,7 +2,7 @@ import pygame
 from os import getcwd
 
 
-class scorpion:
+class Scorpion:
     def __init__(self, screen_height):
         self.diretorio = getcwd()
         self.scorpion_normal = []
@@ -65,5 +65,4 @@ class scorpion:
                 animation=self.scorpion_normal,
                 animation_reverse=self.scorpion_normal_inv
             )
-
 
