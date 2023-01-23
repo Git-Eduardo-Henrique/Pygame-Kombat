@@ -9,8 +9,8 @@ class FightHud:
         self.health_color = (0, 255, 0)
         self.demage_color = (255, 0, 0)
         # tamanho das barras de vida
-        self.health_rect = pygame.Rect(10, 25, 440, 20)
-        self.health_rect_2 = pygame.Rect(550, 25, 440, 20)
+        self.health_rect = pygame.Rect(10, 25, 480, 20)
+        self.health_rect_2 = pygame.Rect(590, 25, 480, 20)
         # fontes
         self.life_font = pygame.font.Font(None, 30)
 

@@ -42,6 +42,12 @@ class Scorpion:
 
     def events(self, screen):
         pressed_keys = pygame.key.get_pressed()
+
+        if self.scorpion_x < 0:
+            self.scorpion_x = 0
+        elif self.scorpion_x > screen.get_width() - self.scorpion_normal[0].get_width():
+            self.scorpion_x = screen.get_width() - self.scorpion_normal[0].get_width()
+
         if pressed_keys[pygame.K_a]:
             self.scorpion_x -= 5
             self.scorpion_state = False

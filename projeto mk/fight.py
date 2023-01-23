@@ -50,7 +50,7 @@ class Fight:
         )
 
         self.sub_zero.update(screen=self.screen)
-        self.sub_zero.move()
+        self.sub_zero.move(screen=self.screen)
 
         self.scorpion.events(screen=self.screen)
 

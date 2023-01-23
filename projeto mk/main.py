@@ -6,8 +6,8 @@ from fight import Fight
 
 pygame.init()
 
-screen_width = 1000
-screen_height = 400
+screen_width = 1080
+screen_height = 480
 screen = pygame.display.set_mode((screen_width, screen_height))
 
 diretorio = getcwd()
@@ -18,7 +18,12 @@ pygame.display.set_caption("Pygame Kombat")
 # Loop principal do jogo
 clock = pygame.time.Clock()
 
-menu = menu()
+menu = menu(
+    screen=screen,
+    screen_width=screen_width,
+    screen_height=screen_height
+)
+
 fight = Fight(
     screen=screen,
     screen_width=screen_width,
@@ -29,7 +34,7 @@ running = True
 while running:
     clock.tick(60)
     if menu.running:
-        menu.menu_start(screen=screen)
+        menu.menu_start()
     else:
         fight.fight_start()
 
