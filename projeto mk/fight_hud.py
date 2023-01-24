@@ -23,7 +23,7 @@ class FightHud:
         self.screen.blit(dev_text, (10, 0))
         self.screen.blit(player2_life_text, (10, 50))
 
-    def in_fight(self, player1_life, player2_life, max_life):
+    def in_fight(self, player1_life, player2_life, max_life, timer):
         # informações de desenvolvedor
         pressed_keys = pygame.key.get_pressed()
 
@@ -35,6 +35,10 @@ class FightHud:
                 player1_life=player1_life,
                 player2_life=player2_life
             )
+        # timer
+        timer_text = self.life_font.render(f"{timer}", True, (255, 255, 255))
+        timer_rect = timer_text.get_rect()
+        timer_rect.center = (self.screen.get_width() / 2, 35)
 
         # barras de vida
         pygame.draw.rect(
@@ -55,3 +59,5 @@ class FightHud:
             (self.health_rect_2.x, self.health_rect_2.y, player2_life / max_life * self.health_rect_2.width,
              self.health_rect_2.height)
         )
+
+        self.screen.blit(timer_text, timer_rect)

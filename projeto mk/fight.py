@@ -35,6 +35,8 @@ class Fight:
         self.FightHud = FightHud(
              screen=screen
         )
+        self.timer_seconds = 120
+        pygame.time.set_timer(pygame.USEREVENT, 1000)
 
     def fight_start(self):
         self.screen.blit(self.background_image, (0, 0))
@@ -42,11 +44,25 @@ class Fight:
             if event.type == pygame.QUIT:
                 pygame.quit()
                 exit()
+            elif event.type == pygame.USEREVENT:
+                # Decrementando o cronômetro
+
+                if self.timer_seconds <= 0:
+                    # Verificando se o jogador tem vidas
+                    if self.player1_life < self.player2_life:
+                        self.player1_life = 0
+                    elif self.player2_life < self.player1_life:
+                        self.player2_life = 0
+                    else:
+                        self.timer_seconds = 30
+                else:
+                    self.timer_seconds -= 1
 
         self.FightHud.in_fight(
                 player1_life=self.player1_life,
                 player2_life=self.player2_life,
-                max_life=self.max_life
+                max_life=self.max_life,
+                timer=self.timer_seconds
         )
 
         self.sub_zero.update(screen=self.screen)
