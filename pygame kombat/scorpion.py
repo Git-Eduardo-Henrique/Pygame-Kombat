@@ -1,15 +1,21 @@
 import pygame
+from move import move
 from os import getcwd
 
 
 class Scorpion:
     def __init__(self, screen_height):
         self.diretorio = getcwd()
+
         self.scorpion_normal = []
         self.scorpion_normal_inv = []
-
         self.scorpion_walking = []
         self.scorpion_walking_inv = []
+        self.scorpion_hp = []
+        self.scorpion_hp_inv = []
+
+        self.move = move()
+
         for i in range(1, 7):
             image = pygame.image.load(f"{self.diretorio}\\images\\scorpion\\scorpion_normal\\scorpion_normal_{i}.png")
             image_upscale = pygame.transform.scale(image, (image.get_width() * 2, image.get_height() * 2))
@@ -21,6 +27,14 @@ class Scorpion:
             image_upscale = pygame.transform.scale(image, (image.get_width() * 2, image.get_height() * 2))
             self.scorpion_walking.append(image_upscale)
             self.scorpion_walking_inv.append(pygame.transform.flip(image_upscale, True, False))
+
+        for i in range(1, 8):
+            image = pygame.image.load(
+                f"{self.diretorio}\\images\\scorpion\\scorpion_high_punch\\scorpion_hp_{i}.png"
+            )
+            image_upscale = pygame.transform.scale(image, (image.get_width() * 2, image.get_height() * 2))
+            self.scorpion_hp.append(image_upscale)
+            self.scorpion_hp_inv.append(pygame.transform.flip(image_upscale, True, False))
 
         self.scorpion_state = True
         self.animation_index = 0
@@ -43,32 +57,24 @@ class Scorpion:
     def events(self, screen):
         pressed_keys = pygame.key.get_pressed()
 
-        if self.scorpion_x < 0:
-            self.scorpion_x = 0
-        elif self.scorpion_x > screen.get_width() - self.scorpion_normal[0].get_width():
-            self.scorpion_x = screen.get_width() - self.scorpion_normal[0].get_width()
+        self.move.moving(
+            screen=screen,
+            animation_normal=self.scorpion_normal,
+            animation_normal_inv=self.scorpion_normal_inv,
+            animation_moving=self.scorpion_walking,
+            animation_moving_inv=self.scorpion_walking_inv,
+            char_x=self.scorpion_x,
+            char_y=self.scorpion_y,
+            char_state=self.scorpion_state,
+            new_char_state_1=False,
+            new_char_state_2=True
+        )
 
-        if pressed_keys[pygame.K_a]:
-            self.scorpion_x -= 5
-            self.scorpion_state = False
+        if pressed_keys[pygame.K_j]:
             self.update(
                 screen=screen,
-                animation=self.scorpion_walking,
-                animation_reverse=self.scorpion_walking_inv
+                animation=self.scorpion_hp,
+                animation_reverse=self.scorpion_hp_inv
             )
 
-        elif pressed_keys[pygame.K_d]:
-            self.scorpion_x += 5
-            self.scorpion_state = True
-            self.update(
-                screen=screen,
-                animation=self.scorpion_walking,
-                animation_reverse=self.scorpion_walking_inv
-            )
-        else:
-            self.update(
-                screen=screen,
-                animation=self.scorpion_normal,
-                animation_reverse=self.scorpion_normal_inv
-            )
 
