@@ -39,7 +39,7 @@ class Scorpion:
         self.scorpion_x = 50
         self.scorpion_y = screen_height - self.scorpion_normal[0].get_height() - 25
         self.walking_state = False
-        self.move = move(char_x=self.scorpion_x, char_y=self.scorpion_y)
+        self.move = move(char_x=self.scorpion_x, char_y=self.scorpion_y, char_state=self.scorpion_state)
 
     def update(self, screen, animation, animation_reverse):
         if self.scorpion_state:
@@ -62,7 +62,6 @@ class Scorpion:
             animation_normal_inv=self.scorpion_normal_inv,
             animation_moving=self.scorpion_walking,
             animation_moving_inv=self.scorpion_walking_inv,
-            char_state=self.scorpion_state,
             new_char_state_1=False,
             new_char_state_2=True
         )

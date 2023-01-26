@@ -2,10 +2,11 @@ import pygame
 
 
 class move:
-    def __init__(self, char_x, char_y):
+    def __init__(self, char_x, char_y, char_state):
         self.animation_index = 0  # verifica em qual sprite o personagem esta
         self.char_x = char_x
         self.char_y = char_y
+        self.char_state = char_state
 
     def animation_update(self, screen, char_state, animation, animation_reverse):
         if char_state:  # se o personagem estiver para a frente
@@ -26,7 +27,7 @@ class move:
 
     def moving(
             self, screen, animation_normal, animation_normal_inv, animation_moving, animation_moving_inv,
-            char_state, new_char_state_1, new_char_state_2
+            new_char_state_1, new_char_state_2
                ):
         pressed_keys = pygame.key.get_pressed()
 
@@ -41,11 +42,11 @@ class move:
             self.char_x -= 5
             # false se o personagem começar na esquerda
             # true se o personagem começar na direita
-            char_state = new_char_state_1
+            self.char_state = new_char_state_1
 
             self.animation_update(
                 screen=screen,
-                char_state=char_state,
+                char_state=self.char_state,
                 animation=animation_moving,
                 animation_reverse=animation_moving_inv
             )
@@ -54,11 +55,11 @@ class move:
             self.char_x += 5
             # true se o personagem começar na esquerda
             # false se o personagem começar na direita
-            char_state = new_char_state_2  # aqui estava true
+            self.char_state = new_char_state_2  # aqui estava true
 
             self.animation_update(
                 screen=screen,
-                char_state=char_state,
+                char_state=self.char_state,
                 animation=animation_moving,
                 animation_reverse=animation_moving_inv
             )
@@ -66,7 +67,7 @@ class move:
         else:
             self.animation_update(
                 screen=screen,
-                char_state=char_state,
+                char_state=self.char_state,
                 animation=animation_normal,
                 animation_reverse=animation_normal_inv
             )
