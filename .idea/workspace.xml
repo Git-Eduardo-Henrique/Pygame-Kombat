@@ -2,49 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8b13c5a3-7981-4a3d-9200-eab514f9a0a0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/pygame kombat/move.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projeto mk/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/pygame kombat/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projeto mk/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pygame kombat/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projeto mk/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pygame kombat/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projeto mk/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pygame kombat/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projeto mk/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pygame kombat/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projeto mk/.idea/projeto mk.iml" beforeDir="false" afterPath="$PROJECT_DIR$/pygame kombat/.idea/projeto mk.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projeto mk/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pygame kombat/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projeto mk/fight.py" beforeDir="false" afterPath="$PROJECT_DIR$/pygame kombat/fight.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projeto mk/fight_hud.py" beforeDir="false" afterPath="$PROJECT_DIR$/pygame kombat/fight_hud.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projeto mk/images/blood.png" beforeDir="false" afterPath="$PROJECT_DIR$/pygame kombat/images/blood.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projeto mk/images/icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/pygame kombat/images/icon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projeto mk/images/scorpion/scorpion_normal/scorpion_normal_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/pygame kombat/images/scorpion/scorpion_normal/scorpion_normal_1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projeto mk/images/scorpion/scorpion_normal/scorpion_normal_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/pygame kombat/images/scorpion/scorpion_normal/scorpion_normal_2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projeto mk/images/scorpion/scorpion_normal/scorpion_normal_3.png" beforeDir="false" afterPath="$PROJECT_DIR$/pygame kombat/images/scorpion/scorpion_normal/scorpion_normal_3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projeto mk/images/scorpion/scorpion_normal/scorpion_normal_4.png" beforeDir="false" afterPath="$PROJECT_DIR$/pygame kombat/images/scorpion/scorpion_normal/scorpion_normal_4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projeto mk/images/scorpion/scorpion_normal/scorpion_normal_5.png" beforeDir="false" afterPath="$PROJECT_DIR$/pygame kombat/images/scorpion/scorpion_normal/scorpion_normal_5.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projeto mk/images/scorpion/scorpion_normal/scorpion_normal_6.png" beforeDir="false" afterPath="$PROJECT_DIR$/pygame kombat/images/scorpion/scorpion_normal/scorpion_normal_6.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projeto mk/images/scorpion/scorpion_normal/scorpion_normal_7.png" beforeDir="false" afterPath="$PROJECT_DIR$/pygame kombat/images/scorpion/scorpion_normal/scorpion_normal_7.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projeto mk/images/scorpion/scorpion_walk/scorpion_walking_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/pygame kombat/images/scorpion/scorpion_walk/scorpion_walking_1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projeto mk/images/scorpion/scorpion_walk/scorpion_walking_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/pygame kombat/images/scorpion/scorpion_walk/scorpion_walking_2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projeto mk/images/scorpion/scorpion_walk/scorpion_walking_3.png" beforeDir="false" afterPath="$PROJECT_DIR$/pygame kombat/images/scorpion/scorpion_walk/scorpion_walking_3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projeto mk/images/scorpion/scorpion_walk/scorpion_walking_4.png" beforeDir="false" afterPath="$PROJECT_DIR$/pygame kombat/images/scorpion/scorpion_walk/scorpion_walking_4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projeto mk/images/scorpion/scorpion_walk/scorpion_walking_5.png" beforeDir="false" afterPath="$PROJECT_DIR$/pygame kombat/images/scorpion/scorpion_walk/scorpion_walking_5.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projeto mk/images/scorpion/scorpion_walk/scorpion_walking_6.png" beforeDir="false" afterPath="$PROJECT_DIR$/pygame kombat/images/scorpion/scorpion_walk/scorpion_walking_6.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projeto mk/images/scorpion/scorpion_walk/scorpion_walking_7.png" beforeDir="false" afterPath="$PROJECT_DIR$/pygame kombat/images/scorpion/scorpion_walk/scorpion_walking_7.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projeto mk/images/scorpion/scorpion_walk/scorpion_walking_8.png" beforeDir="false" afterPath="$PROJECT_DIR$/pygame kombat/images/scorpion/scorpion_walk/scorpion_walking_8.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projeto mk/images/scorpion_sprites.png" beforeDir="false" afterPath="$PROJECT_DIR$/pygame kombat/images/scorpion_sprites.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projeto mk/images/select.png" beforeDir="false" afterPath="$PROJECT_DIR$/pygame kombat/images/select.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projeto mk/images/stage.png" beforeDir="false" afterPath="$PROJECT_DIR$/pygame kombat/images/stage.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projeto mk/images/sub-zero/sub_zero_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/pygame kombat/images/sub-zero/sub_zero_1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projeto mk/images/sub-zero/sub_zero_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/pygame kombat/images/sub-zero/sub_zero_2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projeto mk/images/sub-zero/sub_zero_3.png" beforeDir="false" afterPath="$PROJECT_DIR$/pygame kombat/images/sub-zero/sub_zero_3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projeto mk/images/sub-zero/sub_zero_4.png" beforeDir="false" afterPath="$PROJECT_DIR$/pygame kombat/images/sub-zero/sub_zero_4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projeto mk/images/sub-zero/sub_zero_5.png" beforeDir="false" afterPath="$PROJECT_DIR$/pygame kombat/images/sub-zero/sub_zero_5.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projeto mk/images/sub-zero/sub_zero_6.png" beforeDir="false" afterPath="$PROJECT_DIR$/pygame kombat/images/sub-zero/sub_zero_6.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projeto mk/images/sub-zero/sub_zero_7.png" beforeDir="false" afterPath="$PROJECT_DIR$/pygame kombat/images/sub-zero/sub_zero_7.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projeto mk/images/sub_zero sprites.png" beforeDir="false" afterPath="$PROJECT_DIR$/pygame kombat/images/sub_zero sprites.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projeto mk/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/pygame kombat/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projeto mk/menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/pygame kombat/menu.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projeto mk/scorpion.py" beforeDir="false" afterPath="$PROJECT_DIR$/pygame kombat/scorpion.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projeto mk/sub_zero.py" beforeDir="false" afterPath="$PROJECT_DIR$/pygame kombat/sub_zero.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pygame kombat/move.py" beforeDir="false" afterPath="$PROJECT_DIR$/pygame kombat/move.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pygame kombat/scorpion.py" beforeDir="false" afterPath="$PROJECT_DIR$/pygame kombat/scorpion.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
