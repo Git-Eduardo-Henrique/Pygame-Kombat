@@ -8,7 +8,7 @@ class sub_zero:
         self.sub_zero_animation = []
         self.sub_zero_animation_inv = []
         for i in range(1, 8):
-            image = pygame.image.load(f"{self.diretorio}\\images\\sub-zero\\sub_zero_{i}.png")
+            image = pygame.image.load(f"{self.diretorio}\\midias\\images\\sub-zero\\sub_zero_{i}.png")
             image_upscale = pygame.transform.scale(image, (image.get_width() * 2, image.get_height() * 2))
             self.sub_zero_animation.append(image_upscale)
             self.sub_zero_animation_inv.append(pygame.transform.flip(image_upscale, True, False))

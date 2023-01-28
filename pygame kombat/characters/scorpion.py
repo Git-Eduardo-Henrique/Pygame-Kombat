@@ -1,5 +1,5 @@
 import pygame
-from move import move
+from characters.move import move
 from os import getcwd
 
 
@@ -15,20 +15,20 @@ class Scorpion:
         self.scorpion_hp_inv = []
 
         for i in range(1, 7):
-            image = pygame.image.load(f"{self.diretorio}\\images\\scorpion\\scorpion_normal\\scorpion_normal_{i}.png")
+            image = pygame.image.load(f"{self.diretorio}\\midias\\images\\scorpion\\scorpion_normal\\scorpion_normal_{i}.png")
             image_upscale = pygame.transform.scale(image, (image.get_width() * 2, image.get_height() * 2))
             self.scorpion_normal.append(image_upscale)
             self.scorpion_normal_inv.append(pygame.transform.flip(image_upscale, True, False))
 
         for i in range(1, 9):
-            image = pygame.image.load(f"{self.diretorio}\\images\\scorpion\\scorpion_walk\\scorpion_walking_{i}.png")
+            image = pygame.image.load(f"{self.diretorio}\\midias\\images\\scorpion\\scorpion_walk\\scorpion_walking_{i}.png")
             image_upscale = pygame.transform.scale(image, (image.get_width() * 2, image.get_height() * 2))
             self.scorpion_walking.append(image_upscale)
             self.scorpion_walking_inv.append(pygame.transform.flip(image_upscale, True, False))
 
         for i in range(1, 8):
             image = pygame.image.load(
-                f"{self.diretorio}\\images\\scorpion\\scorpion_high_punch\\scorpion_hp_{i}.png"
+                f"{self.diretorio}\\midias\\images\\scorpion\\scorpion_high_punch\\scorpion_hp_{i}.png"
             )
             image_upscale = pygame.transform.scale(image, (image.get_width() * 2, image.get_height() * 2))
             self.scorpion_hp.append(image_upscale)
@@ -39,7 +39,7 @@ class Scorpion:
         self.scorpion_x = 50
         self.scorpion_y = screen_height - self.scorpion_normal[0].get_height() - 25
         self.walking_state = False
-        self.move = move(char_x=self.scorpion_x, char_y=self.scorpion_y, char_state=self.scorpion_state)
+        self.move = move(char_x=self.scorpion_x, char_y=self.scorpion_y, char_state=True)
 
     def update(self, screen, animation, animation_reverse):
         if self.scorpion_state:

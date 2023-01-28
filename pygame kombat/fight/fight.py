@@ -1,9 +1,9 @@
 import pygame
 from os import getcwd
 
-from scorpion import Scorpion
-from sub_zero import sub_zero
-from fight_hud import FightHud
+from characters.scorpion import Scorpion
+from characters.sub_zero import sub_zero
+from fight.fight_hud import FightHud
 
 
 class Fight:
@@ -14,7 +14,7 @@ class Fight:
 
         self.diretorio = getcwd()
 
-        self.background_image = pygame.image.load(f"{self.diretorio}\\images\\stage.png")
+        self.background_image = pygame.image.load(f"{self.diretorio}\\midias\\images\\stage.png")
         self.background_image = pygame.transform.scale(self.background_image, (screen_width, screen_height))
 
         # Definir a fonte para mostrar as vidas
