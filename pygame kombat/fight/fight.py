@@ -65,8 +65,7 @@ class Fight:
                 timer=self.timer_seconds
         )
 
-        self.sub_zero.update(screen=self.screen)
-        self.sub_zero.move(screen=self.screen)
+        self.sub_zero.events(screen=self.screen)
 
         self.scorpion.events(screen=self.screen)
 
