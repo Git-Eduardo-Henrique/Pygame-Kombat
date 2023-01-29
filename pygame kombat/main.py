@@ -1,6 +1,7 @@
 # modulos normais
 import pygame
 from os import getcwd
+
 # modulos de classes do game
 from menu import menu
 from fight.fight import Fight

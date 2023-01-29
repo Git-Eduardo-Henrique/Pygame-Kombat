@@ -1,15 +1,19 @@
 import pygame
 
-
 class menu:
     def __init__(self, screen, screen_width, screen_height):
+        # variavel para verificar se esta rodando
+        self.running = True
+
+        # configurações de tela
         self.screen = screen
         self.screen_width = screen_width
         self.screen_height = screen_height
+
         # cores
-        self.running = True
         self.white = (255, 255, 255)
         self.red = (255, 0, 0)
+
         # fontes
         self.font = pygame.font.Font(None, 60)
 
@@ -59,11 +63,13 @@ class menu:
 
             # desenhar botões na tela
             self.screen.fill((0, 0, 0))
-            if self.selected == "play":
+            if self.selected == "play":  # deixa o play vermelho e selecionavel
                 self.play_text = self.font.render("Start", True, self.red)
                 self.quit_text = self.font.render("Quit", True, self.white)
-            else:
+            else:  # deixa o quit vermelho e selecionavel
                 self.play_text = self.font.render("Start", True, self.white)
                 self.quit_text = self.font.render("Quit", True, self.red)
+            
+            # exibe as opções na tela
             self.screen.blit(self.play_text, self.play_rect)
             self.screen.blit(self.quit_text, self.quit_rect)
