@@ -3,8 +3,9 @@ from os import getcwd
 
 
 class Scorpion:
-    def __init__(self, screen_height):
+    def __init__(self, screen, screen_height):
         self.diretorio = getcwd()  # diretorio onde o jogo está
+        self.screen = screen
 
         # listas para guardar as animações
         self.scorpion_normal = []
@@ -60,32 +61,36 @@ class Scorpion:
         self.scorpion_x = 50
         self.scorpion_y = screen_height - self.scorpion_normal[0].get_height() - 25
 
-    def animation_n_w(self, screen, animation, animation_reverse): # animação andando e parado
+    def animation(self, animation): # animação andando e parado
+        self.animation_index += 0.15
 
-        if self.scorpion_state:  # se estiver na direita
-            self.animation_index += 0.15
+        if self.animation_index >= len(animation):  # se a animação acabar irá repetir
+            self.animation_index = 0
 
-            if self.animation_index >= len(animation):  # se a animação acabar irá repetir
-                self.animation_index = 0
+        self.screen.blit(animation[int(self.animation_index)], (self.scorpion_x, self.scorpion_y))
 
-            screen.blit(animation[int(self.animation_index)], (self.scorpion_x, self.scorpion_y))
+    def atack(self):
+        for event in pygame.event.get():
+            # Verifica se alguma tecla foi pressionada
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_j:
 
-        else:
-            self.animation_index += 0.15
+                    if self.scorpion_state:
+                        self.animation(screen=self.screen, animation=self.scorpion_hp)
+                    else:
+                        self.animation(screen=self.screen, animation=self.scorpion_hp_inv)
+            
 
-            if self.animation_index >= len(animation_reverse):
-                self.animation_index = 0
-
-            screen.blit(animation_reverse[int(self.animation_index)], (self.scorpion_x, self.scorpion_y))
-
-    def events(self, screen):
+    def events(self):
         pressed_keys = pygame.key.get_pressed()
 
         # nao permite que o player sair da tela
         if self.scorpion_x < 0:  # se estiver na borda esquerda
             self.scorpion_x = 0
-        elif self.scorpion_x > screen.get_width() - self.scorpion_normal[0].get_width():  # se estiver na borda direita
-            self.scorpion_x = screen.get_width() - self.scorpion_normal[0].get_width()
+        elif self.scorpion_x > self.screen.get_width() - self.scorpion_normal[0].get_width():  # se estiver na borda direita
+            self.scorpion_x = self.screen.get_width() - self.scorpion_normal[0].get_width()
+
+        self.atack()
 
         if pressed_keys[pygame.K_a]:  # andar para a esquerda
             self.scorpion_x -= 5
@@ -93,10 +98,8 @@ class Scorpion:
             # true se o personagem começar na direita
             self.scorpion_state = False
 
-            self.animation_n_w(
-                screen=screen,
-                animation=self.scorpion_walking,
-                animation_reverse=self.scorpion_walking_inv
+            self.animation(
+                animation=self.scorpion_walking_inv
             )
 
         elif pressed_keys[pygame.K_d]:  # andar para a direita
@@ -105,26 +108,16 @@ class Scorpion:
             # false se o personagem começar na direita
             self.scorpion_state = True  # aqui estava true
 
-
-            self.animation_n_w(
-                screen=screen,
-                animation=self.scorpion_walking,
-                animation_reverse=self.scorpion_walking_inv
+            self.animation(
+                animation=self.scorpion_walking
             )
 
         else:  # se estiver parado
-            self.animation_n_w(
-                screen=screen,
-                animation=self.scorpion_normal,
-                animation_reverse=self.scorpion_normal_inv
-            )
-
-
-        if pressed_keys[pygame.K_j]:
-            self.animation_n_w(
-                screen=screen,
-                animation=self.scorpion_hp,
-                animation_reverse=self.scorpion_hp_inv
-            )
-
-
+            if self.scorpion_state:
+                self.animation(
+                    animation=self.scorpion_normal
+                    )
+            else:
+                self.animation(
+                    animation=self.scorpion_normal_inv
+                )

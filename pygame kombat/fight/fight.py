@@ -25,7 +25,10 @@ class Fight:
         self.player1_life = self.max_life
         self.player2_life = self.max_life
 
-        self.scorpion = Scorpion(screen_height=screen_height)
+        self.scorpion = Scorpion(
+            screen=screen,
+            screen_height=screen_height
+            )
 
         self.sub_zero = sub_zero(
             screen_height=screen_height,
@@ -67,7 +70,7 @@ class Fight:
 
         self.sub_zero.events(screen=self.screen)
 
-        self.scorpion.events(screen=self.screen)
+        self.scorpion.events()
 
         pressed_keys = pygame.key.get_pressed()
         if pressed_keys[pygame.K_l]:

@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8b13c5a3-7981-4a3d-9200-eab514f9a0a0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pygame kombat/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/pygame kombat/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pygame kombat/scorpion.py" beforeDir="false" afterPath="$PROJECT_DIR$/pygame kombat/scorpion.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pygame kombat/characters/scorpion.py" beforeDir="false" afterPath="$PROJECT_DIR$/pygame kombat/characters/scorpion.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pygame kombat/fight/fight.py" beforeDir="false" afterPath="$PROJECT_DIR$/pygame kombat/fight/fight.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
