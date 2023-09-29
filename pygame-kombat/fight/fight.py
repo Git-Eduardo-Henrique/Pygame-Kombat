@@ -14,7 +14,7 @@ class Fight:
 
         self.diretorio = getcwd()
 
-        self.background_image = pygame.image.load(f"{self.diretorio}\\midias\\images\\stage.png")
+        self.background_image = pygame.image.load(f"{self.diretorio}\\pygame-kombat\\midias\\images\\stage.png")
         self.background_image = pygame.transform.scale(self.background_image, (screen_width, screen_height))
 
         # Definir a fonte para mostrar as vidas

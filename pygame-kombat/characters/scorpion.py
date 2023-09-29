@@ -18,7 +18,7 @@ class Scorpion:
         # imagens do scorpion parado
         for i in range(1, 7):  
             image = pygame.image.load(
-                f"{self.diretorio}\\midias\\images\\scorpion\\scorpion_normal\\scorpion_normal_{i}.png"
+                f"{self.diretorio}\\pygame-kombat\\midias\\images\\scorpion\\scorpion_normal\\scorpion_normal_{i}.png"
                 )  
             image_upscale = pygame.transform.scale(
                 image, (image.get_width() * 2, image.get_height() * 2)
@@ -32,7 +32,7 @@ class Scorpion:
          # imagens do scorpion andando
         for i in range(1, 9): 
             image = pygame.image.load(
-                f"{self.diretorio}\\midias\\images\\scorpion\\scorpion_walk\\scorpion_walking_{i}.png"
+                f"{self.diretorio}\\pygame-kombat\\midias\\images\\scorpion\\scorpion_walk\\scorpion_walking_{i}.png"
                 )  
             image_upscale = pygame.transform.scale(
                 image, (image.get_width() * 2, image.get_height() * 2)
@@ -45,7 +45,7 @@ class Scorpion:
         # imagens do scorpion soco alto
         for i in range(1, 8):
             image = pygame.image.load(
-                f"{self.diretorio}\\midias\\images\\scorpion\\scorpion_high_punch\\scorpion_hp_{i}.png"
+                f"{self.diretorio}\\pygame-kombat\\midias\\images\\scorpion\\scorpion_high_punch\\scorpion_hp_{i}.png"
             ) 
             image_upscale = pygame.transform.scale(
                 image, (image.get_width() * 2, image.get_height() * 2)

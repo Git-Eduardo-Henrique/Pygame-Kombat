@@ -18,7 +18,7 @@ screen_height = 480
 screen = pygame.display.set_mode((screen_width, screen_height))
 
 # define o icone e nome da janela
-icon = pygame.image.load(f"{diretorio}\\midias\\images\\icon.png")
+icon = pygame.image.load(f"{diretorio}\\pygame-kombat\\midias\\images\\icon.png")
 pygame.display.set_icon(icon)
 pygame.display.set_caption("Pygame Kombat")
 

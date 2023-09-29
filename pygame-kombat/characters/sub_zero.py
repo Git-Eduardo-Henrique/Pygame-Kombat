@@ -15,7 +15,7 @@ class sub_zero:
         # sub zero parado
         for i in range(1, 8):
             image = pygame.image.load(
-                f"{self.diretorio}\\midias\\images\\sub-zero\\sub-zero normal\\sub_zero_{i}.png"
+                f"{self.diretorio}\\pygame-kombat\\midias\\images\\sub-zero\\sub-zero normal\\sub_zero_{i}.png"
                 )
             image_upscale = pygame.transform.scale(
                 image, (image.get_width() * 2, image.get_height() * 2)
@@ -27,7 +27,7 @@ class sub_zero:
         # sub zero andando
         for i in range(1, 8): 
             image = pygame.image.load(
-                f"{self.diretorio}\\midias\\images\\sub-zero\\sub-zero walking\\sub_zero_walking_{i}.png"
+                f"{self.diretorio}\\pygame-kombat\\midias\\images\\sub-zero\\sub-zero walking\\sub_zero_walking_{i}.png"
                 )  
             image_upscale = pygame.transform.scale(
                 image, (image.get_width() * 2, image.get_height() * 2)
