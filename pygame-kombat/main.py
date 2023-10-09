@@ -13,9 +13,8 @@ pygame.init()
 diretorio = getcwd() 
 
 # configurações da tela
-screen_width = 1080
-screen_height = 480
-screen = pygame.display.set_mode((screen_width, screen_height))
+screen_resolution = [1080, 480]
+screen = pygame.display.set_mode((screen_resolution[0], screen_resolution[1]))
 
 # define o icone e nome da janela
 icon = pygame.image.load(f"{diretorio}\\pygame-kombat\\midias\\images\\icon.png")
@@ -28,14 +27,14 @@ clock = pygame.time.Clock()
 # objetos
 menu = menu(
     screen=screen,
-    screen_width=screen_width,
-    screen_height=screen_height
+    screen_width=screen_resolution[0],
+    screen_height=screen_resolution[1]
 )
 
 fight = Fight(
     screen=screen,
-    screen_width=screen_width,
-    screen_height=screen_height
+    screen_width=screen_resolution[0],
+    screen_height=screen_resolution[1]
 )
 
 running = True

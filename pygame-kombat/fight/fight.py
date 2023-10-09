@@ -80,5 +80,6 @@ class Fight:
 
         if self.player1_life <= 0 or self.player2_life <= 0:
             game_over_text = self.final_font.render("finish him", True, (255, 255, 255))
+            self.timer_seconds = 0
             self.screen.blit(game_over_text, (
                 self.screen_width / 2 - game_over_text.get_width() / 2, 100))
